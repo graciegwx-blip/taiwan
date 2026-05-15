@@ -117,6 +117,60 @@ body {
     color: var(--accent-color);
 }
 
+/* 日期标签样式 */
+.date-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.date-tab {
+    padding: 10px 25px;
+    border: 2px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.date-tab:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.date-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+}
+
+/* 日期段落样式 */
+.day-section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.day-section.active {
+    display: block;
+}
+
+.day-header {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
 /* 内容包装 */
 .content-wrapper {
     display: grid;
@@ -131,6 +185,8 @@ body {
     padding: 20px;
     border-radius: 15px;
     border-left: 4px solid var(--primary-color);
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 .timeline-section h3 {
@@ -206,6 +262,8 @@ body {
     padding: 20px;
     border-radius: 15px;
     border-top: 4px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .map-section h3 {
@@ -214,11 +272,48 @@ body {
     font-size: 18px;
 }
 
-#map {
-    width: 100%;
-    height: 500px;
+.map-container {
+    flex: 1;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     border: 2px solid var(--border-color);
+    background-color: white;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.map-container .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.map-container .no-map {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.map-upload-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.map-upload-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(139, 115, 85, 0.3);
 }
 
 /* 照片库样式 */
@@ -262,6 +357,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .photo-item {
@@ -315,6 +412,7 @@ body {
     color: #999;
     padding: 20px;
     font-style: italic;
+    grid-column: 1 / -1;
 }
 
 /* 响应式设计 */
@@ -358,28 +456,27 @@ body {
         font-size: 22px;
     }
 
-    #map {
-        height: 300px;
+    .date-tabs {
+        gap: 10px;
+    }
+
+    .date-tab {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .day-header {
+        font-size: 16px;
+    }
+
+    .map-container {
+        min-height: 300px;
     }
 
     .photo-gallery {
         grid-template-columns: 1fr;
+        max-height: 300px;
     }
-}
-
-/* 地图标记样式 */
-.leaflet-popup-content-wrapper {
-    background-color: var(--secondary-color);
-    color: var(--dark-text);
-    border-radius: 10px;
-}
-
-.leaflet-popup-tip {
-    background-color: var(--secondary-color);
-}
-
-.leaflet-marker-icon {
-    filter: hue-rotate(20deg) saturate(0.8);
 }
 
 /* 平滑过渡 */
@@ -393,4 +490,27 @@ p {
     color: #999;
     padding: 20px;
     font-style: italic;
+}
+
+/* 滚动条美化 */
+.timeline-section::-webkit-scrollbar,
+.photo-gallery::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timeline-section::-webkit-scrollbar-track,
+.photo-gallery::-webkit-scrollbar-track {
+    background: var(--light-bg);
+    border-radius: 3px;
+}
+
+.timeline-section::-webkit-scrollbar-thumb,
+.photo-gallery::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.timeline-section::-webkit-scrollbar-thumb:hover,
+.photo-gallery::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }

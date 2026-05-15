@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台湾旅行记录</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -30,244 +29,294 @@
                     <h2>🏝️ 绿岛行程 (2026.4.2-4.4)</h2>
                 </div>
 
-                <div class="content-wrapper">
-                    <!-- 左侧时间线 -->
-                    <div class="timeline-section">
-                        <h3>📅 行程时间线</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.2</div>
-                                    <div class="event">台北出发 🚗</div>
-                                    <div class="details">开车前往台东</div>
-                                </div>
-                            </div>
+                <!-- 日期标签选择 -->
+                <div class="date-tabs">
+                    <button class="date-tab active" data-date="2026-04-02">4月2日</button>
+                    <button class="date-tab" data-date="2026-04-03">4月3日</button>
+                    <button class="date-tab" data-date="2026-04-04">4月4日</button>
+                </div>
 
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 10:00</div>
-                                    <div class="event">抵达台东富冈渔港</div>
-                                    <div class="details">准备坐船前往绿岛</div>
+                <!-- 4月2日 -->
+                <div class="day-section active" data-date="2026-04-02">
+                    <div class="day-header">台北出发 → 台东 🚗</div>
+                    <div class="content-wrapper">
+                        <div class="timeline-section">
+                            <h3>📅 行程时间线</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">2026.4.2 清晨</div>
+                                        <div class="event">从台北出发</div>
+                                        <div class="details">开车前往台东</div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 10:00</div>
-                                    <div class="event">🚢 坐船到绿岛</div>
-                                    <div class="details">从富冈渔港出发</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 11:00</div>
-                                    <div class="event">🏖️ 大白沙</div>
-                                    <div class="details">环岛行程第一站</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 11:35</div>
-                                    <div class="event">⛰️ 牛头山</div>
-                                    <div class="details">俯瞰大西洋美景</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 13:00</div>
-                                    <div class="event">🍜 观音洞伴手礼专卖店</div>
-                                    <div class="details">享用美食</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 14:30</div>
-                                    <div class="event">🏛️ 绿岛人权文化园区</div>
-                                    <div class="details">了解历史文化</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 16:00</div>
-                                    <div class="event">🌊 燕子洞</div>
-                                    <div class="details">捡贝壳拍照</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 17:00</div>
-                                    <div class="event">🥐 阿嬷的葱油饼</div>
-                                    <div class="details">晚餐美食</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 日落</div>
-                                    <div class="event">🌅 民宿门口看日落</div>
-                                    <div class="details">拍摄日落美景</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.3 21:00</div>
-                                    <div class="event">🎤 大白沙唱歌</div>
-                                    <div class="details">夜间娱乐活动</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 早上</div>
-                                    <div class="event">☕ 晨乡早餐店</div>
-                                    <div class="details">早餐时间</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 上午</div>
-                                    <div class="event">🤿 柴口浮潜区</div>
-                                    <div class="details">浮潜体验</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 中午</div>
-                                    <div class="event">🍜 超难吃牛肉面</div>
-                                    <div class="details">午餐</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 13:00</div>
-                                    <div class="event">🏔️ 小长城</div>
-                                    <div class="details">徒步登山</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 下午</div>
-                                    <div class="event">💧 绿岛蓝洞</div>
-                                    <div class="details">徒步游览</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 16:20</div>
-                                    <div class="event">🏠 返回民宿</div>
-                                    <div class="details">休息时间</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 17:30</div>
-                                    <div class="event">🍖️ 阿刚炭烤</div>
-                                    <div class="details">晚餐烧烤</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 20:00</div>
-                                    <div class="event">♨️ 朝日温泉</div>
-                                    <div class="details">泡温泉放松</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 21:40</div>
-                                    <div class="event">🚴 冒雨返回</div>
-                                    <div class="details">骑机车返回民宿</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 上午</div>
-                                    <div class="event">🤿 石朗潜水区</div>
-                                    <div class="details">深潜体验</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 上午</div>
-                                    <div class="event">🔴 绿岛灯塔</div>
-                                    <div class="details">岛屿地标</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 上午</div>
-                                    <div class="event">🛍️ 澎坊绿岛新天地</div>
-                                    <div class="details">购物纪念品</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot last"></div>
-                                <div class="timeline-content">
-                                    <div class="time">2026.4.4 14:00</div>
-                                    <div class="event">🚢 离开绿岛</div>
-                                    <div class="details">坐船返回台东</div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot last"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">2026.4.2 晚上</div>
+                                        <div class="event">抵达台东</div>
+                                        <div class="details">准备第二天的绿岛之旅</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- 中间地图 -->
-                    <div class="map-section">
-                        <h3>🗺️ 行程地图</h3>
-                        <div id="map"></div>
-                    </div>
-
-                    <!-- 右侧照片库 -->
-                    <div class="photos-section">
-                        <h3>📸 行程照片</h3>
-                        <div class="photo-upload">
-                            <input type="file" id="photoInput" multiple accept="image/*" style="display:none;">
-                            <button class="upload-btn" id="uploadBtn">+ 添加照片</button>
+                        <div class="map-section">
+                            <h3>🗺️ 行程地图</h3>
+                            <div id="map-2026-04-02" class="map-container">
+                                <p class="no-map">暂无地图</p>
+                                <img class="map-image" src="" alt="行程地图" style="display:none;">
+                            </div>
+                            <input type="file" class="map-input" data-date="2026-04-02" accept="image/*" style="display:none;">
+                            <button class="map-upload-btn" data-date="2026-04-02">📤 上传地图图片</button>
                         </div>
-                        <div class="photo-gallery" id="photoGallery">
-                            <p class="no-photos">暂无照片</p>
+                        <div class="photos-section">
+                            <h3>📸 行程照片</h3>
+                            <div class="photo-upload">
+                                <input type="file" class="photo-input" data-date="2026-04-02" multiple accept="image/*" style="display:none;">
+                                <button class="upload-btn" data-date="2026-04-02">+ 添加照片</button>
+                            </div>
+                            <div class="photo-gallery" data-date="2026-04-02">
+                                <p class="no-photos">暂无照片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4月3日 -->
+                <div class="day-section" data-date="2026-04-03">
+                    <div class="day-header">绿岛环岛行 🏝️</div>
+                    <div class="content-wrapper">
+                        <div class="timeline-section">
+                            <h3>📅 行程时间线</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">10:00</div>
+                                        <div class="event">到达绿岛</div>
+                                        <div class="details">从富冈渔港坐船</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">11:00</div>
+                                        <div class="event">🏖️ 大白沙</div>
+                                        <div class="details">环岛骑机车第一站</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">11:35</div>
+                                        <div class="event">⛰️ 牛头山</div>
+                                        <div class="details">俯瞰大西洋美景</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">13:00</div>
+                                        <div class="event">🍜 观音洞伴手礼专卖店</div>
+                                        <div class="details">享用美食</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">14:30</div>
+                                        <div class="event">🏛️ 绿岛人权文化园区</div>
+                                        <div class="details">了解历史文化</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">16:00</div>
+                                        <div class="event">🌊 燕子洞</div>
+                                        <div class="details">捡贝壳拍照</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">17:00</div>
+                                        <div class="event">🥐 阿嬷的葱油饼</div>
+                                        <div class="details">晚餐美食</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">日落时分</div>
+                                        <div class="event">🌅 民宿门口看日落</div>
+                                        <div class="details">拍摄日落美景</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot last"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">21:00</div>
+                                        <div class="event">🎤 大白沙唱歌</div>
+                                        <div class="details">夜间娱乐活动</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-section">
+                            <h3>🗺️ 行程地图</h3>
+                            <div id="map-2026-04-03" class="map-container">
+                                <p class="no-map">暂无地图</p>
+                                <img class="map-image" src="" alt="行程地图" style="display:none;">
+                            </div>
+                            <input type="file" class="map-input" data-date="2026-04-03" accept="image/*" style="display:none;">
+                            <button class="map-upload-btn" data-date="2026-04-03">📤 上传地图图片</button>
+                        </div>
+                        <div class="photos-section">
+                            <h3>📸 行程照片</h3>
+                            <div class="photo-upload">
+                                <input type="file" class="photo-input" data-date="2026-04-03" multiple accept="image/*" style="display:none;">
+                                <button class="upload-btn" data-date="2026-04-03">+ 添加照片</button>
+                            </div>
+                            <div class="photo-gallery" data-date="2026-04-03">
+                                <p class="no-photos">暂无照片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4月4日 -->
+                <div class="day-section" data-date="2026-04-04">
+                    <div class="day-header">深潜、蓝洞、温泉 🤿</div>
+                    <div class="content-wrapper">
+                        <div class="timeline-section">
+                            <h3>📅 行程时间线</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">早上</div>
+                                        <div class="event">☕ 晨乡早餐店</div>
+                                        <div class="details">早餐时间</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">上午</div>
+                                        <div class="event">🤿 柴口浮潜区</div>
+                                        <div class="details">浮潜体验</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">中午</div>
+                                        <div class="event">🍜 超难吃牛肉面</div>
+                                        <div class="details">午餐（美食体验）</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">13:00</div>
+                                        <div class="event">🏔️ 小长城</div>
+                                        <div class="details">徒步登山</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">下午</div>
+                                        <div class="event">💧 绿岛蓝洞</div>
+                                        <div class="details">徒步游览蓝色水洞</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">16:20</div>
+                                        <div class="event">🏠 返回民宿</div>
+                                        <div class="details">休息和补给</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">17:30</div>
+                                        <div class="event">🍖️ 阿刚炭烤</div>
+                                        <div class="details">晚餐烧烤</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">20:00</div>
+                                        <div class="event">♨️ 朝日温泉</div>
+                                        <div class="details">海边温泉泡澡</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">21:40</div>
+                                        <div class="event">🚴 冒雨返回民宿</div>
+                                        <div class="details">骑机车归来</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">上午</div>
+                                        <div class="event">🤿 石朗潜水区</div>
+                                        <div class="details">深潜体验</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">上午</div>
+                                        <div class="event">🔴 绿岛灯塔</div>
+                                        <div class="details">岛屿地标打卡</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">上午</div>
+                                        <div class="event">🛍️ 澎坊绿岛新天地</div>
+                                        <div class="details">购物纪念品</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot last"></div>
+                                    <div class="timeline-content">
+                                        <div class="time">14:00</div>
+                                        <div class="event">🚢 离开绿岛</div>
+                                        <div class="details">坐船返回台东</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-section">
+                            <h3>🗺️ 行程地图</h3>
+                            <div id="map-2026-04-04" class="map-container">
+                                <p class="no-map">暂无地图</p>
+                                <img class="map-image" src="" alt="行程地图" style="display:none;">
+                            </div>
+                            <input type="file" class="map-input" data-date="2026-04-04" accept="image/*" style="display:none;">
+                            <button class="map-upload-btn" data-date="2026-04-04">📤 上传地图图片</button>
+                        </div>
+                        <div class="photos-section">
+                            <h3>📸 行程照片</h3>
+                            <div class="photo-upload">
+                                <input type="file" class="photo-input" data-date="2026-04-04" multiple accept="image/*" style="display:none;">
+                                <button class="upload-btn" data-date="2026-04-04">+ 添加照片</button>
+                            </div>
+                            <div class="photo-gallery" data-date="2026-04-04">
+                                <p class="no-photos">暂无照片</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -312,8 +361,6 @@
     </div>
 
     <!-- 脚本 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
