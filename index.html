@@ -3,364 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台湾旅行记录</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>台湾旅行记录 - 首页</title>
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航 -->
+        <!-- 导航栏 -->
         <header class="header">
             <h1 class="logo">🇹🇼 台湾行程记录</h1>
             <nav class="nav">
-                <button class="nav-btn active" data-section="green-island">绿岛</button>
-                <button class="nav-btn" data-section="jiufen">九份</button>
-                <button class="nav-btn" data-section="jinshan">金山</button>
-                <button class="nav-btn" data-section="yilan">宜兰</button>
-                <button class="nav-btn" data-section="tainan">台南</button>
-                <button class="nav-btn" data-section="northpoint">最北点</button>
+                <a href="#" class="nav-link active">首页</a>
+                <a href="pages/green-island.html" class="nav-link">绿岛</a>
+                <a href="pages/jinshan.html" class="nav-link">金山</a>
+                <a href="pages/jiufen.html" class="nav-link">九份</a>
+                <a href="pages/hualien.html" class="nav-link">花莲</a>
+                <a href="pages/northpoint.html" class="nav-link">最北点</a>
+                <a href="pages/yilan.html" class="nav-link">宜兰</a>
+                <a href="pages/tainan.html" class="nav-link">台南</a>
             </nav>
         </header>
 
-        <!-- 主内容区域 -->
+        <!-- 主内容 -->
         <main class="main-content">
-            <!-- 绿岛部分 -->
-            <section id="green-island" class="section active">
-                <div class="section-header">
-                    <h2>🏝️ 绿岛行程 (2026.4.2-4.4)</h2>
-                </div>
+            <!-- 标题 -->
+            <div class="hero-section">
+                <h2 class="hero-title">2026年的台湾之旅 ✈️</h2>
+                <p class="hero-subtitle">用足迹记录，用镜头留念</p>
+            </div>
 
-                <!-- 日期标签选择 -->
-                <div class="date-tabs">
-                    <button class="date-tab active" data-date="2026-04-02">4月2日</button>
-                    <button class="date-tab" data-date="2026-04-03">4月3日</button>
-                    <button class="date-tab" data-date="2026-04-04">4月4日</button>
-                </div>
+            <!-- 台湾地图 -->
+            <section class="map-section">
+                <div class="taiwan-map-container">
+                    <svg class="taiwan-map" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 台湾轮廓 -->
+                        <defs>
+                            <filter id="paper-texture">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="2" />
+                                <feDisplacementMap in="SourceGraphic" scale="0.5" />
+                            </filter>
+                        </defs>
+                        
+                        <!-- 台湾地形 -->
+                        <path d="M 100 20 L 110 35 L 115 50 L 118 70 L 120 90 L 125 110 L 130 130 L 135 150 L 138 170 L 140 190 L 138 210 L 135 225 L 130 235 L 120 240 L 100 245 L 80 240 L 70 235 L 65 225 L 60 210 L 58 190 L 55 170 L 52 150 L 48 130 L 45 110 L 42 90 L 40 70 L 42 50 L 48 35 Z" 
+                              stroke="#8B7355" stroke-width="1.5" fill="#F5F1E8" opacity="0.8" filter="url(#paper-texture)"/>
+                    </svg>
 
-                <!-- 4月2日 -->
-                <div class="day-section active" data-date="2026-04-02">
-                    <div class="day-header">台北出发 → 台东 🚗</div>
-                    <div class="content-wrapper">
-                        <div class="timeline-section">
-                            <h3>📅 行程时间线</h3>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">2026.4.2 清晨</div>
-                                        <div class="event">从台北出发</div>
-                                        <div class="details">开车前往台东</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot last"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">2026.4.2 晚上</div>
-                                        <div class="event">抵达台东</div>
-                                        <div class="details">准备第二天的绿岛之旅</div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- 地点标记 -->
+                    <div class="location-markers">
+                        <!-- 金山 (西北) -->
+                        <div class="location-marker" data-location="jinshan" data-date="2.27">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🏖️ 金山</div>
+                            <div class="marker-date">2.27</div>
                         </div>
-                        <div class="map-section">
-                            <h3>🗺️ 行程地图</h3>
-                            <div id="map-2026-04-02" class="map-container">
-                                <p class="no-map">暂无地图</p>
-                                <img class="map-image" src="" alt="行程地图" style="display:none;">
-                            </div>
-                            <input type="file" class="map-input" data-date="2026-04-02" accept="image/*" style="display:none;">
-                            <button class="map-upload-btn" data-date="2026-04-02">📤 上传地图图片</button>
-                        </div>
-                        <div class="photos-section">
-                            <h3>📸 行程照片</h3>
-                            <div class="photo-upload">
-                                <input type="file" class="photo-input" data-date="2026-04-02" multiple accept="image/*" style="display:none;">
-                                <button class="upload-btn" data-date="2026-04-02">+ 添加照片</button>
-                            </div>
-                            <div class="photo-gallery" data-date="2026-04-02">
-                                <p class="no-photos">暂无照片</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 4月3日 -->
-                <div class="day-section" data-date="2026-04-03">
-                    <div class="day-header">绿岛环岛行 🏝️</div>
-                    <div class="content-wrapper">
-                        <div class="timeline-section">
-                            <h3>📅 行程时间线</h3>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">10:00</div>
-                                        <div class="event">到达绿岛</div>
-                                        <div class="details">从富冈渔港坐船</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">11:00</div>
-                                        <div class="event">🏖️ 大白沙</div>
-                                        <div class="details">环岛骑机车第一站</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">11:35</div>
-                                        <div class="event">⛰️ 牛头山</div>
-                                        <div class="details">俯瞰大西洋美景</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">13:00</div>
-                                        <div class="event">🍜 观音洞伴手礼专卖店</div>
-                                        <div class="details">享用美食</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">14:30</div>
-                                        <div class="event">🏛️ 绿岛人权文化园区</div>
-                                        <div class="details">了解历史文化</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">16:00</div>
-                                        <div class="event">🌊 燕子洞</div>
-                                        <div class="details">捡贝壳拍照</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">17:00</div>
-                                        <div class="event">🥐 阿嬷的葱油饼</div>
-                                        <div class="details">晚餐美食</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">日落时分</div>
-                                        <div class="event">🌅 民宿门口看日落</div>
-                                        <div class="details">拍摄日落美景</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot last"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">21:00</div>
-                                        <div class="event">🎤 大白沙唱歌</div>
-                                        <div class="details">夜间娱乐活动</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- 九份 (东北) -->
+                        <div class="location-marker" data-location="jiufen" data-date="2.28">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🏮 九份</div>
+                            <div class="marker-date">2.28</div>
                         </div>
-                        <div class="map-section">
-                            <h3>🗺️ 行程地图</h3>
-                            <div id="map-2026-04-03" class="map-container">
-                                <p class="no-map">暂无地图</p>
-                                <img class="map-image" src="" alt="行程地图" style="display:none;">
-                            </div>
-                            <input type="file" class="map-input" data-date="2026-04-03" accept="image/*" style="display:none;">
-                            <button class="map-upload-btn" data-date="2026-04-03">📤 上传地图图片</button>
-                        </div>
-                        <div class="photos-section">
-                            <h3>📸 行程照片</h3>
-                            <div class="photo-upload">
-                                <input type="file" class="photo-input" data-date="2026-04-03" multiple accept="image/*" style="display:none;">
-                                <button class="upload-btn" data-date="2026-04-03">+ 添加照片</button>
-                            </div>
-                            <div class="photo-gallery" data-date="2026-04-03">
-                                <p class="no-photos">暂无照片</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 4月4日 -->
-                <div class="day-section" data-date="2026-04-04">
-                    <div class="day-header">深潜、蓝洞、温泉 🤿</div>
-                    <div class="content-wrapper">
-                        <div class="timeline-section">
-                            <h3>📅 行程时间线</h3>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">早上</div>
-                                        <div class="event">☕ 晨乡早餐店</div>
-                                        <div class="details">早餐时间</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">上午</div>
-                                        <div class="event">🤿 柴口浮潜区</div>
-                                        <div class="details">浮潜体验</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">中午</div>
-                                        <div class="event">🍜 超难吃牛肉面</div>
-                                        <div class="details">午餐（美食体验）</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">13:00</div>
-                                        <div class="event">🏔️ 小长城</div>
-                                        <div class="details">徒步登山</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">下午</div>
-                                        <div class="event">💧 绿岛蓝洞</div>
-                                        <div class="details">徒步游览蓝色水洞</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">16:20</div>
-                                        <div class="event">🏠 返回民宿</div>
-                                        <div class="details">休息和补给</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">17:30</div>
-                                        <div class="event">🍖️ 阿刚炭烤</div>
-                                        <div class="details">晚餐烧烤</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">20:00</div>
-                                        <div class="event">♨️ 朝日温泉</div>
-                                        <div class="details">海边温泉泡澡</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">21:40</div>
-                                        <div class="event">🚴 冒雨返回民宿</div>
-                                        <div class="details">骑机车归来</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">上午</div>
-                                        <div class="event">🤿 石朗潜水区</div>
-                                        <div class="details">深潜体验</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">上午</div>
-                                        <div class="event">🔴 绿岛灯塔</div>
-                                        <div class="details">岛屿地标打卡</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">上午</div>
-                                        <div class="event">🛍️ 澎坊绿岛新天地</div>
-                                        <div class="details">购物纪念品</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-dot last"></div>
-                                    <div class="timeline-content">
-                                        <div class="time">14:00</div>
-                                        <div class="event">🚢 离开绿岛</div>
-                                        <div class="details">坐船返回台东</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- 绿岛 (东南) -->
+                        <div class="location-marker" data-location="green-island" data-date="4.3-5">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🏝️ 绿岛</div>
+                            <div class="marker-date">4.3-5</div>
                         </div>
-                        <div class="map-section">
-                            <h3>🗺️ 行程地图</h3>
-                            <div id="map-2026-04-04" class="map-container">
-                                <p class="no-map">暂无地图</p>
-                                <img class="map-image" src="" alt="行程地图" style="display:none;">
-                            </div>
-                            <input type="file" class="map-input" data-date="2026-04-04" accept="image/*" style="display:none;">
-                            <button class="map-upload-btn" data-date="2026-04-04">📤 上传地图图片</button>
+
+                        <!-- 花莲 (东) -->
+                        <div class="location-marker" data-location="hualien" data-date="5.1-3">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🏞️ 花莲</div>
+                            <div class="marker-date">5.1-3</div>
                         </div>
-                        <div class="photos-section">
-                            <h3>📸 行程照片</h3>
-                            <div class="photo-upload">
-                                <input type="file" class="photo-input" data-date="2026-04-04" multiple accept="image/*" style="display:none;">
-                                <button class="upload-btn" data-date="2026-04-04">+ 添加照片</button>
-                            </div>
-                            <div class="photo-gallery" data-date="2026-04-04">
-                                <p class="no-photos">暂无照片</p>
-                            </div>
+
+                        <!-- 台湾最北点 (北) -->
+                        <div class="location-marker" data-location="northpoint" data-date="5.6">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🧭 最北点</div>
+                            <div class="marker-date">5.6</div>
+                        </div>
+
+                        <!-- 宜兰 (西北) -->
+                        <div class="location-marker" data-location="yilan" data-date="5.7">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🌲 宜兰</div>
+                            <div class="marker-date">5.7</div>
+                        </div>
+
+                        <!-- 台南 (西南) -->
+                        <div class="location-marker" data-location="tainan" data-date="5.17">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">🏯 台南</div>
+                            <div class="marker-date">5.17</div>
+                        </div>
+
+                        <!-- 阿里山 (中) -->
+                        <div class="location-marker" data-location="alishan" data-date="Soon">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">⛰️ 阿里山</div>
+                            <div class="marker-date">Soon</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 其他地点占位符 -->
-            <section id="jiufen" class="section">
-                <div class="section-header">
-                    <h2>🏮 九份行程</h2>
+            <!-- 地点卡片列表 -->
+            <section class="cards-section">
+                <h3 class="section-title">📅 时间线回顾</h3>
+                <div class="cards-container">
+                    <!-- 金山卡片 -->
+                    <div class="location-card" data-location="jinshan">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">2月27日</div>
+                            <div class="card-title">🏖️ 金山</div>
+                            <div class="card-desc">六号码头面店 → 芋圆王总店 → 金山老街</div>
+                            <div class="card-emoji">🌊☀️</div>
+                        </div>
+                    </div>
+
+                    <!-- 九份卡片 -->
+                    <div class="location-card" data-location="jiufen">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">2月28日</div>
+                            <div class="card-title">🏮 九份</div>
+                            <div class="card-desc">金瓜石瀑布 → 九份老街 → 十分天灯</div>
+                            <div class="card-emoji">🎆✨</div>
+                        </div>
+                    </div>
+
+                    <!-- 绿岛卡片 -->
+                    <div class="location-card" data-location="green-island">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">4月3-5日</div>
+                            <div class="card-title">🏝️ 绿岛</div>
+                            <div class="card-desc">环岛骑行 → 浮潜深潜 → 朝日温泉</div>
+                            <div class="card-emoji">🌴🤿</div>
+                        </div>
+                    </div>
+
+                    <!-- 花莲卡片 -->
+                    <div class="location-card" data-location="hualien">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">5月1-3日</div>
+                            <div class="card-title">🏞️ 花莲</div>
+                            <div class="card-desc">沙滩车 → 溯溪 → 独木舟看日出</div>
+                            <div class="card-emoji">🌅🚣</div>
+                        </div>
+                    </div>
+
+                    <!-- 最北点卡片 -->
+                    <div class="location-card" data-location="northpoint">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">5月6日</div>
+                            <div class="card-title">🧭 台湾最北点</div>
+                            <div class="card-desc">富贵角公园 → 老梅石槽 → 海边火锅</div>
+                            <div class="card-emoji">📍🌊</div>
+                        </div>
+                    </div>
+
+                    <!-- 宜兰卡片 -->
+                    <div class="location-card" data-location="yilan">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">5月7日</div>
+                            <div class="card-title">🌲 宜兰</div>
+                            <div class="card-desc">礁溪葱油饼 → 哲思书栈 → 罗东夜市</div>
+                            <div class="card-emoji">🧅🌃</div>
+                        </div>
+                    </div>
+
+                    <!-- 台南卡片 -->
+                    <div class="location-card" data-location="tainan">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">5月17日</div>
+                            <div class="card-title">🏯 台南</div>
+                            <div class="card-desc">古城探索 → 美食之都 → 庙会风情</div>
+                            <div class="card-emoji">🏛️🍜</div>
+                        </div>
+                    </div>
+
+                    <!-- 有趣记录卡片 -->
+                    <div class="location-card special">
+                        <div class="card-tape"></div>
+                        <div class="card-content">
+                            <div class="card-date">💝 特别记录</div>
+                            <div class="card-title">✨ 一些有趣的记录</div>
+                            <div class="card-desc">旅途中的趣事、对话、发现...</div>
+                            <div class="card-emoji">📝🎭</div>
+                        </div>
+                    </div>
                 </div>
-                <p>敬请期待...</p>
             </section>
 
-            <section id="jinshan" class="section">
-                <div class="section-header">
-                    <h2>⛱️ 金山行程</h2>
+            <!-- 统计信息 -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">个地点</div>
                 </div>
-                <p>敬请期待...</p>
-            </section>
-
-            <section id="yilan" class="section">
-                <div class="section-header">
-                    <h2>🌲 宜兰行程</h2>
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">天行程</div>
                 </div>
-                <p>敬请期待...</p>
-            </section>
-
-            <section id="tainan" class="section">
-                <div class="section-header">
-                    <h2>🏯 台南行程</h2>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">美好回忆</div>
                 </div>
-                <p>敬请期待...</p>
-            </section>
-
-            <section id="northpoint" class="section">
-                <div class="section-header">
-                    <h2>🧭 台湾最北点</h2>
-                </div>
-                <p>敬请期待...</p>
             </section>
         </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>💫 用镜头和文字记录每一个美好时刻 💫</p>
+            <p style="font-size: 12px; color: #999; margin-top: 10px;">2026年台湾旅行 | Made with 💚</p>
+        </footer>
     </div>
 
-    <!-- 脚本 -->
-    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
